@@ -7,6 +7,13 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3002; // Adicione a opção process.env.PORT para obter a porta dinamicamente do Heroku
 
+
+app.get('/', (req, res) => {
+  // Adicione aqui a lógica real para reproduzir o vídeo
+  // Por exemplo, você pode buscar o vídeo em um servidor ou armazenamento em nuvem e reproduzi-lo.
+  console.log('Funcionou!');
+  res.status(200).json({ message: 'Olá.' });
+});
 // Rota para reproduzir o vídeo
 app.get('/executar-video', (req, res) => {
   // Adicione aqui a lógica real para reproduzir o vídeo
@@ -14,6 +21,7 @@ app.get('/executar-video', (req, res) => {
   console.log('Vídeo executado!');
   res.status(200).json({ message: 'Vídeo executado com sucesso.' });
 });
+
 
 // Função para executar o worker
 const executarWorker = async () => {
